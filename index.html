@@ -7,12 +7,39 @@
     <link rel="stylesheet" href="css/custom.css">
 </head>
     
-<body>
+<body ng-app="dbApp">
     
+    <div ng-controller="dbConnectCtrl" ng-init="getResults()">
+        <div class="mainContainer" ng-model="result">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>UserName</th>
+                        <th>City</th>
+                        <th>Date Added</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="actor in result.items | orderBy: 'add_date'">
+                        <td>{{actor.fname}}</td>
+                        <td>{{actor.lname}}</td>
+                        <td>{{actor.username}}</td>
+                        <td>{{actor.city}}</td>
+                        <td>{{actor.add_date}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <!-- JAVASCRIPT -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
-
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/Main.js"></script>
+    <script src="js/Controllers.js"></script>
     <!-- END JAVASCRIPT -->
 </body>
 </html>

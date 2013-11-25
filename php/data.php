@@ -14,16 +14,16 @@ function dbConnect()
     }
     else
     {
-        echo 'Connected!!!';
+        //echo 'Connected!!!';
         
         $dbcheck    = mysql_select_db("$database");
         if(!$dbcheck)
         {
-            echo mysql_error();
+            //echo mysql_error();
         }
         else 
         {
-            echo '<p>You have connected to the database ' . $database . '</p>';
+            //echo '<p>You have connected to the database ' . $database . '</p>';
             
         }
     }
@@ -36,9 +36,9 @@ function getData()
     $items          = array();
     while($row = mysql_fetch_array($query))
     {
-        $items[] = array('fname' => $row['fname'], 'lname' => $row['lname'], 'username' => $row['username']);
+        $items[] = array('fname' => $row['fname'], 'lname' => $row['lname'], 'username' => $row['username'], 'city' => $row['city'], 'add_date' => $row['add_date']);
     }
-    echo json_encode(array('items'=>$items));
+    print_r( json_encode(array('items'=>$items)) );
 }
 
 dbConnect();
