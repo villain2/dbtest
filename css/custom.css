@@ -1,3 +1,4 @@
+/*** variables ***/
 html, body {
   width: 100%;
   height: 100%;
@@ -9,3 +10,11 @@ html, body {
   margin: 0 auto; }
   .mainContainer table {
     width: 100%; }
+
+.itemContainer ul li {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #dadada;
+  box-shadow: 0 0 0 1px rbga(black, 0.2);
+  transition: all 0.5s;
+  text-align: center; }
